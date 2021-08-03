@@ -8,7 +8,7 @@
 
         {% get_categories %}
 
-        <li><a href="./about.html">О нас</a></li>
+        <li><a href="{% url 'about_url' %}">О нас</a></li>
         <li><a href="{% url 'contact_url' %}">Контакты</a></li>
     </ul>
 </nav>

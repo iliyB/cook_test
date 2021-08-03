@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load social_tags %}
 
 {% block content %}
 
@@ -324,11 +325,10 @@
                                     <h6>Follow me</h6>
                                 </div>
                                 <div class="sidebar__item__follow__links">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-youtube-play"></i></a>
-                                    <a href="#"><i class="fa fa-instagram"></i></a>
-                                    <a href="#"><i class="fa fa-envelope-o"></i></a>
+                                {% get_social_links as social_links %}
+                                {% for item in social_links %}
+                                    <a href="{{ item.social_links }}"><img src="{{ item.icon.url }}"</a>
+                                {% endfor %}
                                 </div>
                             </div>
                             <div class="sidebar__feature__item">
